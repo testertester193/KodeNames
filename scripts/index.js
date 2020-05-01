@@ -79,14 +79,14 @@ function removeItem(array, index) {
 function createNewGame() {
 	var trs = [];
 	for (var i = 0; i < NUMBER_OF_WORDS; i++) {
-		if (!trs[i % 5]) {
-			trs[i % 5] = "";
+		if (!trs[i % 6]) {
+			trs[i % 6] = "";
 		}
 		var randomNumber = Math.floor(Math.random() * sessionData.length);
 		var word = sessionData[randomNumber];
 		removeItem(sessionData, randomNumber);
 		wordsSelected.push(word);
-		trs[i % 5] += "<div class=\"word\" id=\'" + i + "\' onclick=\"clicked(\'" + i + "\')\"><div><a href=\"#\"><span class=\"ada\"></span>" + word + "</a></div></div>";
+		trs[i % 6] += "<div class=\"word\" id=\'" + i + "\' onclick=\"clicked(\'" + i + "\')\"><div><a href=\"#\"><span class=\"ada\"></span>" + word + "</a></div></div>";
 	}
 	//<a href="#"><span class="ada">Washington stimulates economic growth </span>Read me</a>
 	for (var i = 0; i < trs.length; i++) {
